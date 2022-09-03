@@ -6,7 +6,7 @@
 
 ## 💻 Projeto
 
-Fiz uma Landing page, desdo UI/UX ao código. Usei de inspiração o design da Rocketseat.
+Fiz uma Landing page, desdo UI/UX ao código. Usando o designer da Rockeseat de inspiração.
 
 ## 🚀 Tecnologias
 
