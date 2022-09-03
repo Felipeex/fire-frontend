@@ -1,10 +1,21 @@
+import { ArrowRight } from "phosphor-react";
+import { useEffect } from "react";
+import aos from "aos";
+
 import Background from "@/source/background-home.png";
 import Thumbnail from "@/source/thumbnail-home.png";
+import Google from "@/source/google-icon.png";
+import Netflix from "@/source/netflix-icon.png";
+import Twitch from "@/source/twitch-icon.png";
 
-import { ArrowRight } from "phosphor-react";
 import { Platform } from "@/components/Platform";
+import { Static } from "@/components/Static";
 
 export const Home = () => {
+  useEffect(() => {
+    aos.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <main>
       <img
@@ -42,7 +53,10 @@ export const Home = () => {
 
       <section className="bg-black-700">
         <div className="h-16 w-[2px] bg-gradient-to-b from-purple-600 m-auto mt-16" />
-        <h2 className="font-extrabold text-4xl max-w-[364px] mt-16 m-auto text-center">
+        <h2
+          className="font-extrabold text-4xl max-w-[364px] mt-16 m-auto text-center"
+          data-aos="fade-right"
+        >
           Por que escolher a plataforma Fire?
         </h2>
 
@@ -57,10 +71,56 @@ export const Home = () => {
 
         <section className="bg-black-800 border-b border-t border-gray-900">
           <div className="max-w-[856px] m-auto">
-            <h2 className="max-w-[590px] font-extrabold text-4xl mt-28">
+            <h2
+              data-aos="fade-right"
+              className="max-w-[590px] font-extrabold text-4xl mt-28"
+            >
               Impulsionamos milhares de empresas
             </h2>
+
+            <section className="flex flex-wrap justify-between my-36">
+              <Static
+                title="Milhões de request por horas em nosso serviço."
+                value="1"
+                valueFormat="M"
+                data-aos-delay="0"
+              />
+              <Static
+                title="Milhares de empresas utilizando o nosso serviço."
+                value="1"
+                valueFormat="mil"
+                data-aos-delay="200"
+              />
+              <Static
+                title="Milhões de Pessoas impactados pelo nosso serviço."
+                value="10"
+                valueFormat="M"
+                data-aos-delay="400"
+              />
+            </section>
           </div>
+        </section>
+      </section>
+
+      <section>
+        <h2
+          className="font-extrabold text-4xl max-w-[364px] mt-28 m-auto text-center"
+          data-aos="fade-right"
+        >
+          Por que escolher a plataforma Fire?
+        </h2>
+        <p
+          className="text-gray-700 max-w-[664px] text-center m-auto mt-7"
+          data-aos="fade-right"
+        >
+          Empresas que confiam em nosso trabalho, utilizando nossa velocidade e
+          escalabilidade.
+        </p>
+
+        <section className="max-w-[863px] flex flex-wrap justify-between my-16 m-auto items-center">
+          <img src={Twitch} data-aos="fade-right" />
+          <img src={Netflix} data-aos="fade-right" data-aos-delay="200" />
+          <img src={Google} data-aos="fade-right" data-aos-delay="400" />
         </section>
       </section>
     </main>
